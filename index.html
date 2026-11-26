@@ -1,562 +1,599 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sudheer AC Services provides expert AC repair, installation, gas filling, cleaning, maintenance, and AMC support with fast doorstep service.">
-  <meta name="keywords" content="AC repair, AC installation, AC service, gas filling, AC maintenance, Sudheer AC Services">
-  <meta name="author" content="Sudheer AC Services">
-  <title>Sudheer AC Services | Expert AC Repair & Installation</title>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <style>
-/* Mobile Popup */
-/* Popup Overlay */
-.popup-overlay{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
-    background:rgba(0,0,0,.75);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:999999;
-    padding:16px;
-    box-sizing:border-box;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIRAT AC SERVICES | 15% OFF</title>
+
+<meta name="description" content="VIRAT AC SERVICES - Professional AC Repair, Installation, Gas Filling and Maintenance. Get 15% OFF on your first service.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Popup Box */
-.popup-box{
-    position:relative;
-    width:100%;
-    max-width:420px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Image */
-.popup-box img{
-    width:100%;
-    max-width:420px;
-    max-height:90vh;      /* Screen ke andar rahe */
-    height:auto;
-    object-fit:contain;   /* Crop nahi hoga */
-    display:block;
-    border-radius:18px;
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #050505;
+    color: #fff;
+    overflow-x: hidden;
 }
 
-/* Close Button */
-.popup-close{
-    position:absolute;
-    top:-12px;
-    right:-12px;
-    width:36px;
-    height:36px;
-    border:none;
-    border-radius:50%;
-    background:#fff;
-    font-size:22px;
-    cursor:pointer;
-    z-index:10;
+:root {
+    --red: #e50920;
+    --gold: #e6bd78;
+    --black: #050505;
+    --white: #ffffff;
 }
 
-/* Mobile */
-@media (max-width:768px){
+/* NAVBAR */
 
-    .popup-overlay{
-        padding:20px;
+.navbar {
+    width: 100%;
+    height: 85px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #080808;
+    border-bottom: 1px solid #222;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-btn {
+    text-decoration: none;
+    background: var(--red);
+    color: white;
+    padding: 13px 23px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 800;
+    transition: .3s;
+}
+
+.nav-btn:hover {
+    background: var(--gold);
+    color: black;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+    radial-gradient(ellipse at center, #271014 0%, #10090b 48%, #050505 100%);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border: 1px solid rgba(229,9,32,.13);
+    border-radius: 50%;
+    box-shadow:
+    0 0 80px rgba(229,9,32,.12),
+    inset 0 0 80px rgba(229,9,32,.08);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: .12;
+    pointer-events: none;
+    background-image: radial-gradient(#e6bd78 1px, transparent 1px);
+    background-size: 35px 35px;
+    mask-image: linear-gradient(to bottom, transparent, black, transparent);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 950px;
+    animation: fadeUp 1.2s ease;
+}
+
+/* BRAND */
+
+.studio-tag {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 7px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(65px, 13vw, 145px);
+    font-weight: 900;
+    letter-spacing: 8px;
+    line-height: 1;
+
+    background: linear-gradient(
+        180deg,
+        #ffffff 10%,
+        #d7d7d7 45%,
+        #8c8c8c 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    filter: drop-shadow(0 8px 20px rgba(229,9,32,.2));
+}
+
+.studio-name {
+    font-size: 15px;
+    color: var(--gold);
+    letter-spacing: 9px;
+    font-weight: 700;
+    margin-top: 18px;
+}
+
+/* DIVIDER */
+
+.divider {
+    width: 150px;
+    height: 2px;
+    margin: 30px auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--red),
+        var(--gold),
+        transparent
+    );
+}
+
+/* OFFER */
+
+.hero h2 {
+    font-size: clamp(65px, 11vw, 115px);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--red);
+    text-shadow: 0 0 35px rgba(229,9,32,.3);
+    margin-top: 15px;
+}
+
+.hero h2 span {
+    color: var(--gold);
+}
+
+.offer-text {
+    font-size: 13px;
+    letter-spacing: 5px;
+    font-weight: 700;
+    color: #ddd;
+    margin-top: 20px;
+}
+
+/* SERVICES */
+
+.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.service-item {
+    border: 1px solid rgba(230,189,120,.3);
+    background: rgba(255,255,255,.04);
+    padding: 12px 18px;
+    border-radius: 5px;
+    color: #ddd;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* WHATSAPP */
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    margin-top: 40px;
+    padding: 17px 45px;
+
+    background: linear-gradient(135deg,#25d366,#078d42);
+    color: white;
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    border: 1px solid #8cffb1;
+    border-radius: 50px;
+
+    box-shadow: 0 0 30px rgba(37,211,102,.25);
+    transition: .35s;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 0 45px rgba(37,211,102,.5);
+}
+
+.whatsapp-btn svg {
+    width: 23px;
+    height: 23px;
+    fill: white;
+}
+
+.bottom-text {
+    margin-top: 35px;
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 3px;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #080808;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.footer-logo {
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.footer-logo span {
+    color: var(--red);
+}
+
+.footer p {
+    color: #777;
+    font-size: 11px;
+    margin-top: 12px;
+}
+
+/* FLOATING BUTTON */
+
+.float-whatsapp {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 100;
+
+    background: #25d366;
+    color: white;
+
+    padding: 15px 22px;
+    border-radius: 50px;
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+
+    box-shadow: 0 5px 25px rgba(37,211,102,.3);
+    transition: .3s;
+}
+
+.float-whatsapp:hover {
+    transform: scale(1.08);
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
     }
 
-    .popup-box{
-        max-width:340px;
-        margin:auto;
-    }
-
-    .popup-box img{
-        width:100%;
-        max-width:340px;
-        max-height:80vh;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
+
+/* RESPONSIVE */
+
+@media(max-width:768px) {
+
+    .navbar {
+        height: 70px;
+        padding: 0 5%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-btn {
+        padding: 11px 15px;
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 600px;
+        padding: 60px 15px;
+    }
+
+    .hero::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero h1 {
+        letter-spacing: 4px;
+    }
+
+    .studio-tag {
+        font-size: 10px;
+        letter-spacing: 4px;
+    }
+
+    .studio-name {
+        font-size: 12px;
+        letter-spacing: 6px;
+    }
+
+    .offer-text {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .services {
+        gap: 8px;
+    }
+
+    .service-item {
+        font-size: 9px;
+        padding: 10px 12px;
+    }
+
+    .whatsapp-btn {
+        padding: 15px 30px;
+        font-size: 13px;
+    }
+
+    .bottom-text {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .float-whatsapp {
+        right: 15px;
+        bottom: 15px;
+        padding: 13px 17px;
+        font-size: 11px;
+    }
+}
+
+@media(max-width:380px) {
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero h2 {
+        font-size: 60px;
+    }
+}
+
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18413764915"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-18413764915');
-</script>
-<!-- Event snippet for Outbound click conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<!-- GOOGLE TAG MANAGER -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MJ8WG6L8"></script>
+
 <script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
 function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18413764915/VP7XCISXgewcELOCr8xE',
-      'value': 1.0,
-      'currency': 'INR',
-      'event_callback': callback
-  });
-  return false;
+    var callback = function () {
+        if (typeof(url) != 'undefined') {
+            window.location = url;
+        }
+    };
+
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18573144867/YEEPCOyZ2L8dEKPmrphF',
+        'value': 1.0,
+        'currency': 'INR',
+        'event_callback': callback
+    });
+
+    setTimeout(function() {
+        window.open(url, '_blank');
+    }, 1000);
+
+    return false;
 }
 </script>
 
 </head>
+
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <nav class="nav container" aria-label="Primary navigation">
-      <a class="logo" href="#home" aria-label="Sudheer AC Services home">
-        <span class="logo-mark"><i class="fa-solid fa-snowflake"></i></span>
-        <span>Sudheer AC Services</span>
-      </a>
 
-      <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
-      <label class="nav-button" for="nav-toggle" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
+<!-- NAVBAR -->
 
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#why-us">Why Us</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<nav class="navbar">
 
-  <main>
-    <!-- Hero -->
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <p class="eyebrow">Premium AC care at your doorstep</p>
-          <h1>Expert AC Repair &amp; Installation Services</h1>
-          <p class="hero-text">We provide professional AC installation, repair, gas filling, maintenance, and annual servicing with affordable pricing and fast doorstep support.</p>
-          <div class="hero-actions" aria-label="Service actions">
-            <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-calendar-check"></i>Book Service</a>
-            <a class="btn btn-secondary" href="tel:+919999999999"><i class="fa-solid fa-phone"></i>Call Now</a>
-          </div>
-          <div class="trust-badges" aria-label="Trust badges">
-            <span>&#10003; Same Day Service</span>
-            <span>&#10003; Certified Technicians</span>
-            <span>&#10003; Affordable Pricing</span>
-            <span>&#10003; 100% Satisfaction</span>
-          </div>
+    <div class="logo">
+        VIRAT<span>.</span> AC SERVICES
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#offer">OFFER</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-btn">
+        BOOK SERVICE
+    </a>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="studio-tag">
+            ✦ PROFESSIONAL AC SERVICES ✦
         </div>
 
-        <figure class="hero-media">
-          <img src="assets/hero-ac-service.png" alt="Professional AC technician repairing a modern split air conditioner">
-          <figcaption class="hero-card glass-card">
-            <i class="fa-solid fa-shield-heart"></i>
-            <span>Trusted home AC experts</span>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
+        <h1>VIRAT</h1>
 
-    <!-- Services -->
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Our services</p>
-          <h2>Complete AC Solutions</h2>
-          <p>From first installation to emergency repairs, our team keeps your cooling system efficient, clean, and reliable.</p>
+        <div class="studio-name">
+            AC SERVICES
         </div>
 
-        <div class="card-grid service-grid">
-          <article class="service-card">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-            <h3>AC Installation</h3>
-            <p>Precision split and window AC installation with safe mounting, wiring, and performance checks.</p>
-          </article>
-          <article class="service-card">
-            <i class="fa-solid fa-toolbox"></i>
-            <h3>AC Repair</h3>
-            <p>Quick diagnosis and repair for cooling problems, unusual noise, electrical issues, and breakdowns.</p>
-          </article>
-          <article class="service-card">
-            <i class="fa-solid fa-gauge-high"></i>
-            <h3>AC Gas Filling</h3>
-            <p>Leak inspection, pressure testing, and refrigerant refill for better cooling and lower power use.</p>
-          </article>
-          <article class="service-card">
-            <i class="fa-solid fa-soap"></i>
-            <h3>AC Cleaning</h3>
-            <p>Deep cleaning for filters, coils, blower, and drains to improve airflow and indoor air quality.</p>
-          </article>
-          <article class="service-card">
-            <i class="fa-solid fa-fan"></i>
-            <h3>AC Maintenance</h3>
-            <p>Seasonal tune-ups that reduce sudden failures and extend the life of your AC system.</p>
-          </article>
-          <article class="service-card">
-            <i class="fa-solid fa-file-signature"></i>
-            <h3>AMC Service</h3>
-            <p>Annual maintenance plans with scheduled visits, priority support, and dependable service records.</p>
-          </article>
-          <article class="service-card">
-            <i class="fa-solid fa-droplet"></i>
-            <h3>Water Leakage Repair</h3>
-            <p>Drain line cleaning, tray inspection, and leakage fixes for neat, worry-free cooling.</p>
-          </article>
-          <article class="service-card">
-            <i class="fa-solid fa-microchip"></i>
-            <h3>Compressor Repair</h3>
-            <p>Expert compressor checks, relay repairs, capacitor replacement, and cooling system restoration.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+        <div class="divider"></div>
 
-    <!-- Why Choose Us -->
-    <section class="section section-soft" id="why-us">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Why choose us</p>
-          <h2>Service Built Around Trust</h2>
-          <p>Clear pricing, trained technicians, and careful workmanship make every visit simple and stress-free.</p>
-        </div>
+        <h2 id="offer">
+            10% <span>OFF</span>
+        </h2>
 
-        <div class="feature-grid">
-          <article class="feature-card"><i class="fa-solid fa-user-gear"></i><h3>Experienced Technicians</h3></article>
-          <article class="feature-card"><i class="fa-solid fa-certificate"></i><h3>Genuine Spare Parts</h3></article>
-          <article class="feature-card"><i class="fa-solid fa-bolt"></i><h3>Fast Response</h3></article>
-          <article class="feature-card"><i class="fa-solid fa-receipt"></i><h3>Transparent Pricing</h3></article>
-          <article class="feature-card"><i class="fa-solid fa-house-chimney"></i><h3>Doorstep Service</h3></article>
-          <article class="feature-card"><i class="fa-solid fa-headset"></i><h3>Emergency Support</h3></article>
-          <article class="feature-card"><i class="fa-solid fa-award"></i><h3>Warranty</h3></article>
-          <article class="feature-card"><i class="fa-solid fa-face-smile"></i><h3>Customer Satisfaction</h3></article>
-        </div>
-      </div>
-    </section>
+        <p class="offer-text">
+            ON YOUR FIRST AC SERVICE
+        </p>
 
-    <!-- How It Works -->
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">How it works</p>
-          <h2>Simple Booking, Smooth Service</h2>
-        </div>
+        <div class="services">
 
-        <div class="steps-grid">
-          <article class="step-card">
-            <span>01</span>
-            <i class="fa-solid fa-calendar-plus"></i>
-            <h3>Book Service</h3>
-            <p>Share your AC issue and preferred time.</p>
-          </article>
-          <article class="step-card">
-            <span>02</span>
-            <i class="fa-solid fa-person-walking-luggage"></i>
-            <h3>Technician Visit</h3>
-            <p>Our expert arrives with tools and parts.</p>
-          </article>
-          <article class="step-card">
-            <span>03</span>
-            <i class="fa-solid fa-clipboard-check"></i>
-            <h3>Repair &amp; Testing</h3>
-            <p>We fix, test, and verify cooling output.</p>
-          </article>
-          <article class="step-card">
-            <span>04</span>
-            <i class="fa-solid fa-thumbs-up"></i>
-            <h3>Happy Customer</h3>
-            <p>Enjoy reliable cooling and support.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Brands -->
-    <section class="section section-soft">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Brands we service</p>
-          <h2>Expertise Across Leading AC Brands</h2>
-        </div>
-        <div class="brand-grid" aria-label="AC brands serviced">
-          <span>Daikin</span>
-          <span>LG</span>
-          <span>Samsung</span>
-          <span>Voltas</span>
-          <span>Blue Star</span>
-          <span>Hitachi</span>
-          <span>Carrier</span>
-          <span>Panasonic</span>
-          <span>Whirlpool</span>
-          <span>Lloyd</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Statistics -->
-    <section class="stats-section">
-      <div class="container stats-grid">
-        <article class="stat-card"><strong>5000+</strong><span>Happy Customers</span></article>
-        <article class="stat-card"><strong>10+</strong><span>Years Experience</span></article>
-        <article class="stat-card"><strong>24/7</strong><span>Support</span></article>
-        <article class="stat-card"><strong>98%</strong><span>Customer Satisfaction</span></article>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="section" id="pricing">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Pricing</p>
-          <h2>Clear Service Packages</h2>
-          <p>Choose the plan that matches your AC needs. Final pricing is confirmed after inspection when parts are required.</p>
-        </div>
-
-        <div class="pricing-grid">
-          <article class="pricing-card">
-            <h3>Basic Service</h3>
-            <p class="price">&#8377;499</p>
-            <ul>
-              <li>Filter cleaning</li>
-              <li>Cooling inspection</li>
-              <li>Drain check</li>
-              <li>Basic performance report</li>
-            </ul>
-            <a class="btn btn-outline" href="#contact">Book Now</a>
-          </article>
-          <article class="pricing-card featured">
-            <span class="plan-tag">Popular</span>
-            <h3>Deep Cleaning</h3>
-            <p class="price">&#8377;999</p>
-            <ul>
-              <li>Indoor unit jet cleaning</li>
-              <li>Coil and blower cleaning</li>
-              <li>Drain pipe flush</li>
-              <li>Complete cooling test</li>
-            </ul>
-            <a class="btn btn-primary" href="#contact">Book Now</a>
-          </article>
-          <article class="pricing-card">
-            <h3>Installation Service</h3>
-            <p class="price">&#8377;1499</p>
-            <ul>
-              <li>Split AC installation</li>
-              <li>Mounting and alignment</li>
-              <li>Pipe and wiring check</li>
-              <li>Final demo and testing</li>
-            </ul>
-            <a class="btn btn-outline" href="#contact">Book Now</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section section-soft" id="reviews">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Reviews</p>
-          <h2>Customers Love Our Service</h2>
-        </div>
-
-        <div class="testimonial-grid">
-          <article class="testimonial-card">
-            <div class="review-top">
-              <span class="avatar">RK</span>
-              <div>
-                <h3>Ravi Kumar</h3>
-                <p class="rating" aria-label="5 star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-              </div>
+            <div class="service-item">
+                ❄ AC REPAIR
             </div>
-            <p>Very professional service. The technician arrived on time, explained the issue clearly, and fixed our AC cooling problem quickly.</p>
-          </article>
-          <article class="testimonial-card">
-            <div class="review-top">
-              <span class="avatar">SP</span>
-              <div>
-                <h3>Sneha Patel</h3>
-                <p class="rating" aria-label="5 star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-              </div>
+
+            <div class="service-item">
+                ❄ AC INSTALLATION
             </div>
-            <p>Booked deep cleaning before summer. The airflow improved immediately and the pricing was transparent from the start.</p>
-          </article>
-          <article class="testimonial-card">
-            <div class="review-top">
-              <span class="avatar">AM</span>
-              <div>
-                <h3>Amit Mehra</h3>
-                <p class="rating" aria-label="5 star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-              </div>
+
+            <div class="service-item">
+                ❄ GAS REFILLING
             </div>
-            <p>They installed our new split AC neatly and tested everything before leaving. Excellent support and clean workmanship.</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <!-- FAQ -->
-    <section class="section">
-      <div class="container faq-container">
-        <div class="section-heading">
-          <p class="eyebrow">FAQ</p>
-          <h2>Common Questions</h2>
+            <div class="service-item">
+                ❄ AC MAINTENANCE
+            </div>
+
         </div>
 
-        <div class="faq-list">
-          <details open>
-            <summary>How often should AC be serviced?</summary>
-            <p>For regular home use, service your AC at least twice a year, ideally before and during peak summer.</p>
-          </details>
-          <details>
-            <summary>What is included in gas filling?</summary>
-            <p>We inspect for leaks, check pressure levels, refill refrigerant as required, and test cooling performance.</p>
-          </details>
-          <details>
-            <summary>Do you provide warranty?</summary>
-            <p>Yes, warranty is provided on eligible repairs and parts based on the service type and spare part used.</p>
-          </details>
-          <details>
-            <summary>Is same-day service available?</summary>
-            <p>Yes, same-day service is available in most areas depending on technician availability and booking time.</p>
-          </details>
-          <details>
-            <summary>Which brands do you repair?</summary>
-            <p>We service major brands including Daikin, LG, Samsung, Voltas, Blue Star, Hitachi, Carrier, Panasonic, Whirlpool, and Lloyd.</p>
-          </details>
-          <details>
-            <summary>Do you install new ACs?</summary>
-            <p>Yes, we install new split and window AC units with proper mounting, wiring checks, and final testing.</p>
-          </details>
-        </div>
-      </div>
-    </section>
+        <a
+        href="https://wa.me/919661516139?text=Hello%20Virat%20AC%20Services%2C%20I%20want%20to%20book%20an%20AC%20service."
+        class="whatsapp-btn"
+        target="_blank"
+        onclick="return gtag_report_conversion(this.href)"
+        rel="noopener noreferrer">
 
-    <!-- Contact -->
-    <section class="section contact-section" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-info">
-          <p class="eyebrow">Contact us</p>
-          <h2>Book Reliable AC Service Today</h2>
-          <p>Tell us what your AC needs and our support team will schedule a technician visit at your convenience.</p>
+            <svg viewBox="0 0 24 24">
+                <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .1 5.4.1 12c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.7a12 12 0 0 0 5.8 1.5h.1c6.6 0 12-5.4 12-12 0-3.2-1.3-6.1-3.7-8.3ZM12.1 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.3-.4a9.7 9.7 0 0 1-1.5-5.2 9.9 9.9 0 1 1 9.9 9.8Zm5.4-7.4c-.3-.2-1.7-.9-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.4.2-.7.1-.3-.2-1.2-.5-2.3-1.5-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.6-1-2.1-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.1 1.1-1.1 2.5s1.1 2.8 1.3 3c.2.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.3-.6-.5Z"/>
+            </svg>
 
-          <div class="contact-list">
-            <a href="tel:+919999999999"><i class="fa-solid fa-phone"></i><span>+91 99999 99999</span></a>
-            <a href="mailto:info@sudheeracservices.com"><i class="fa-solid fa-envelope"></i><span>info@sudheeracservices.com</span></a>
-            <p><i class="fa-solid fa-location-dot"></i><span>Doorstep AC service across your city</span></p>
-            <p><i class="fa-solid fa-clock"></i><span>Open daily: 8:00 AM - 10:00 PM</span></p>
-          </div>
-        </div>
+            BOOK AC SERVICE
 
-        <form class="contact-form" action="#" method="post">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required>
-
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
-
-          <label for="service">Service</label>
-          <select id="service" name="service" required>
-            <option value="">Select a service</option>
-            <option>AC Installation</option>
-            <option>AC Repair</option>
-            <option>AC Gas Filling</option>
-            <option>AC Cleaning</option>
-            <option>AMC Service</option>
-          </select>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell us about your AC issue"></textarea>
-
-          <button class="btn btn-primary" type="submit"><i class="fa-solid fa-paper-plane"></i>Submit</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <a
-    class="whatsapp-float"
-    href="https://wa.me/917070364104?text=i%20want%20to%20know%20more.."
-    target="_blank"
-    rel="noopener"
-    aria-label="Chat with Sudheer AC Services on WhatsApp"
-    onclick="return typeof gtag_report_conversion === 'function' ? gtag_report_conversion(this.href) : true;"
-  >
-    <i class="fa-brands fa-whatsapp"></i>
-    <span>WhatsApp</span>
-  </a>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <a class="logo footer-logo" href="#home">
-          <span class="logo-mark"><i class="fa-solid fa-snowflake"></i></span>
-          <span>Sudheer AC Services</span>
         </a>
-        <p>Professional AC repair, installation, maintenance, cleaning, and AMC support with dependable doorstep service.</p>
-      </div>
-      <div>
-        <h3>Services</h3>
-        <ul>
-          <li><a href="#services">AC Installation</a></li>
-          <li><a href="#services">AC Repair</a></li>
-          <li><a href="#services">Gas Filling</a></li>
-          <li><a href="#services">AC Maintenance</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#why-us">Why Us</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Contact Details</h3>
-        <ul>
-          <li><a href="tel:+919999999999">+91 99999 99999</a></li>
-          <li><a href="mailto:info@sudheeracservices.com">info@sudheeracservices.com</a></li>
-          <li>8:00 AM - 10:00 PM</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Sudheer AC Services. All rights reserved.</p>
-    </div>
-  </footer>
-<div id="mobilePopup" class="popup-overlay">
-    <div class="popup-box">
-        <button class="popup-close" onclick="closePopup()">×</button>
 
-        <a href="https://wa.me/917070364104?text=I%20want%20to%20know%20more.." target="_blank" onclick="return typeof gtag_report_conversion === 'function' ? gtag_report_conversion(this.href) : true;">
-            <img src="popup.png" alt="Offer">
-        </a>
+        <div class="bottom-text">
+            YOUR COMFORT · OUR PRIORITY
+        </div>
+
     </div>
-</div>
 
-<script>
-window.onload = function () {
-    setTimeout(function () {
-        document.getElementById("mobilePopup").style.display = "flex";
-    }, 100);
-};
+</section>
 
-function closePopup() {
-    document.getElementById("mobilePopup").style.display = "none";
-}
-</script>
+<!-- FOOTER -->
+
+<footer class="footer" id="contact">
+
+    <div class="footer-logo">
+        VIRAT<span>.</span> AC SERVICES
+    </div>
+
+    <p>
+        PROFESSIONAL AIR CONDITIONING SERVICES
+    </p>
+
+    <p>
+        © 2026 VIRAT AC SERVICES. ALL RIGHTS RESERVED.
+    </p>
+
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+href="https://wa.me/919661516139?text=Hello%20Virat%20AC%20Services%2C%20I%20want%20to%20book%20an%20AC%20service."
+class="float-whatsapp"
+target="_blank"
+onclick="return gtag_report_conversion(this.href)"
+rel="noopener noreferrer">
+
+    ☎ BOOK SERVICE
+
+</a>
+
 </body>
 </html>
